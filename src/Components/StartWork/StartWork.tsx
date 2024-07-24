@@ -35,7 +35,6 @@ const StartWork = ({ employeeId } : { employeeId: number}) => {
     useEffect(() => {
     handleClockInData();
   }, []);
-
   return(
     <div className="list">
       <h2>Início de expediente</h2>
