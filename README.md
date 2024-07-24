@@ -1,70 +1,68 @@
-# Getting Started with Create React App
+## Sistema de Registro de Pontos de uma Empresa
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Este é um sistema desenvolvido em React com TypeScript para o frontend e Node.js para o backend. Os testes foram implementados utilizando JavaScript. O sistema é destinado ao registro de pontos de funcionários de uma empresa.
+Pré-requisitos
 
-## Available Scripts
+Antes de iniciar, certifique-se de ter os seguintes requisitos instalados no seu sistema:
 
-In the project directory, you can run:
+    Node.js
+    PostgreSQL
 
-### `npm start`
+Criar Tabela de Funcionários:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+    Você precisará criar uma tabela no banco de dados para armazenar os funcionários. Utilize o seguinte comando SQL como exemplo:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+CREATE TABLE employees (
+  id SERIAL PRIMARY KEY,
+  name VARCHAR(100) NOT NULL,
+  department VARCHAR(100) NOT NULL
+);
 
-### `npm test`
+Insira pelo menos um funcionário para testar a aplicação:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+        INSERT INTO employees (name, department) VALUES ('Nome do Funcionário', 'Departamento');
 
-### `npm run build`
+Configuração do Projeto
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+    Clonar o Repositório:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+        Clone este repositório para o seu ambiente local
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Instalar Dependências:
 
-### `npm run eject`
+    No diretório raiz do projeto, instale as dependências necessárias executando:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+    npm install
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Configurar Variáveis de Ambiente:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+    Crie um arquivo .env na raiz do projeto com as seguintes variáveis:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+    DB_HOST=seu_host
+    DB_USER=seu_usuario
+    DB_PASSWORD=sua_senha
+    DB_NAME=nome_do_banco
 
-## Learn More
+    Substitua seu_host, seu_usuario, sua_senha e nome_do_banco pelas suas configurações do PostgreSQL.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Executar o Projeto:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+    Para iniciar o servidor backend, execute:
 
-### Code Splitting
+    sql
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+node server.js
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Funcionalidades
 
-### Making a Progressive Web App
+    Registro de Horas:
+        Os funcionários podem registrar a data e hora de início e fim da jornada de trabalho.
+        O sistema calcula automaticamente a quantidade de horas trabalhadas.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Exemplo de Uso
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+    Acesse a aplicação pelo navegador.
+    Faça login utilizando as credenciais.
+    Na página principal, preencha os campos de registro de ponto.
+    Visualize as horas trabalhadas e os registros anteriores.
