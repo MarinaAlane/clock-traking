@@ -15,9 +15,9 @@
 }
 
 .buttonWrapper {
-  width: 25%;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+  margin: 20px;
 
   button {
     margin: 0 0 20px 20px;
@@ -38,4 +38,24 @@
   display: flex;
   justify-content: center;
   font-weight: 700
+}
+
+.contenWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mainContent {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 800px;
+}
+
+.listWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 10px;
 }

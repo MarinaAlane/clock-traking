@@ -1,28 +1,46 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Clock from 'react-live-clock';
+import { Button, ListGroup, ListGroupItem } from "react-bootstrap";
+import 'moment-timezone';
+import axios from "axios";
 
 import "./mainPage.styles.css"
-import { Button, ButtonGroup } from "react-bootstrap";
+import { format } from "date-fns";
+import Header from '../../Components/Header.tsx';
+import StartWork from "../../Components/StartWork.tsx";
 
-const InitialPage = () => {
+const InitialPage = ({ employeeId }) => {
+  const [clockInData, setClockInData] = useState([]);
+  const [startWorkData, setStartWorkData] = useState(false);
+  const [finishWork, setFinishWork] = useState(false)
+
+  // const handleClockIn = async () => {
+  //   try {
+  //     const now = new Date();
+  //   const response = await clockInRegister({ timestamp: now, employeeId }); 
+  //   console.log('Clock-in registrado:', response.data.clock_in_time);
+  //   } catch (error) {
+  //     console.error('Erro ao registrar o horário:', error);
+  //   }
+  // };
+
+  // const handleClockInData = async () => {
+  //   const employeeId = 1;
+  //   try {
+  //     const response = await getStartData(employeeId);
+  //     const { data } = response;
+  //     setClockInData(data);
+  //     setStartWorkData(true);
+  //   } catch (error) {
+  //     console.error('Erro ao registrar o horário:', error);
+  //   }
+  // };
+
   return(
     <>
-    <div className="header_wrapper">
-      <div className="user_info">
-      <h4>Bem vindo, Fulano!</h4>
-      <p>#45855</p>
-      </div>
-      <h1> Registros de ponto</h1>
-    </div>
-      <div className="divider" />
-      <div className="clock">
-        <Clock format={'HH:mm:ss'} ticking={true} timezone={'YOUR_TIMEZONE'} />
-      </div>
-      <div className="buttonWrapper">
-        <Button>Início de jornada</Button>
-        <Button>Fim de jornada</Button>
-        <Button>Total de horas</Button>
-      </div>
+      <Header/>
+      <StartWork />
+      {/* <Button onClick={handleClockIn}>MARCAR PONTO</Button> */}
     </>
   )
 }

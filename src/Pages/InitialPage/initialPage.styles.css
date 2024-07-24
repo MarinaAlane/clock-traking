@@ -8,30 +8,29 @@
   height: 100vh;
 }
 
-.login {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
-  width: 100%;
-  max-width: 600px;
-}
-
-/* .blob-section {
-  background-color: #f2b45d;
-  width: 70%;
-  height: 100vh;
-  border-radius: 100% 100% 100% 0% / 0% 100% 100% 100% ;
-} */
-
 .logo {
   max-width: 250px;
   height: auto;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
 }
 
 .button {
   background-color: #F8940B;
   color: #000000;
   margin-top: 15px;
+  width: 100%;
+  max-width: 200px;
+  border: none;
+  font-weight: 700;
 }
+
+.button:hover {
+  background-color: #d7973d; 
+}
+
