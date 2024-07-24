@@ -5,19 +5,20 @@ import 'moment-timezone';
 import "./Header.styles.css";
 
 const Header = () => {
-
   return(
     <>
-      <div className="header_wrapper">
-        <div className="user_info">
+      <div className="headerWrapper">
+        <div className="userInfo">
           <h4>Bem vindo, Fulano!</h4>
           <p>#45855</p>
         </div>
         <h1> Registros de ponto</h1>
       </div>
-      <div className="divider" />
-      <div className="clock">
-        <Clock format={'HH:mm:ss'} ticking={true} timezone={'America/Sao_Paulo'} />
+      <div className="clockWrapper">
+        <div className="divider" />
+        <div className="clock">
+          <Clock format={'HH:mm:ss'} ticking={true} timezone={'America/Sao_Paulo'} />
+        </div>
       </div>
     </>
   )

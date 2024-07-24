@@ -1,0 +1,24 @@
+.list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+h2 {
+  align-items: center;
+}
+
+.buttonRegistration {
+  button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0 20px 20px;
+    background-color: #63997A;
+    color: #FFFFFF;
+    font-size: 20px;
+    font-weight: 700;
+    border: none;
+  }
+}

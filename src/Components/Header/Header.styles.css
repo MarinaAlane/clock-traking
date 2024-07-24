@@ -1,0 +1,49 @@
+.headerWrapper{
+  display: flex;
+  justify-content: space-between;
+  margin: 30px 30px 0;
+
+  p{
+    font-weight: 100;
+  }
+
+  @media only screen and (max-width: 600px) {
+    display: block;
+    margin: 20px;
+  }
+}
+
+.divider {
+  height: 5px;
+  width: 25%;
+  background-color: #F8940B;
+}
+
+h1 {
+    @media only screen and (max-width: 600px) {
+    font-size: 25px;
+    text-align: center;
+    padding-top: 20px;
+  }
+}
+
+.clockWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+
+    @media only screen and (max-width: 600px) {
+    margin: 0;
+  }
+}
+
+.clock {
+  font-size: 40px;
+  font-weight: 600;
+  padding-right: 90px;
+
+  @media only screen and (max-width: 600px) {
+    font-size: 30px;
+  }
+
+}

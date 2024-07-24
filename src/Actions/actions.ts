@@ -13,6 +13,10 @@ export const getStartData = (employeeId: IData): Promise<any> => {
   return axios.get(`http://localhost:5000/api/${employeeId}/start`);
 };
 
-export const getFinishData = (employeeId: number): Promise<any> => {
-  return axios.get(`http://localhost:5000/${employeeId}/finish`);
+export const getFinishData = (employeeId: IData): Promise<any> => {
+  return axios.get(`http://localhost:5000/api/${employeeId}/finish`);
+};
+
+export const getTotalHours = (employeeId: IData): Promise<any> => {
+  return axios.get(`http://localhost:5000/api/${employeeId}/total`);
 };

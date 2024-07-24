@@ -1,46 +1,48 @@
-import React, { useEffect, useState } from "react";
-import Clock from 'react-live-clock';
-import { Button, ListGroup, ListGroupItem } from "react-bootstrap";
+import React, { useState } from "react";
+import { Button } from "react-bootstrap";
 import 'moment-timezone';
-import axios from "axios";
+
+import Header from '../../Components/Header/Header.tsx';
+import StartWork from "../../Components/StartWork/StartWork.tsx";
+import FinishWork from "../../Components/FinishWork/FinishWork.tsx";
+import TotalHours from "../../Components/TotalHours/TotalHours.tsx";
 
 import "./mainPage.styles.css"
-import { format } from "date-fns";
-import Header from '../../Components/Header.tsx';
-import StartWork from "../../Components/StartWork.tsx";
 
 const InitialPage = ({ employeeId }) => {
-  const [clockInData, setClockInData] = useState([]);
   const [startWorkData, setStartWorkData] = useState(false);
-  const [finishWork, setFinishWork] = useState(false)
+  const [finishWorkData, setFinishWorkData] = useState(false)
+  const [totalHours, setTotalHours] = useState(false)
 
-  // const handleClockIn = async () => {
-  //   try {
-  //     const now = new Date();
-  //   const response = await clockInRegister({ timestamp: now, employeeId }); 
-  //   console.log('Clock-in registrado:', response.data.clock_in_time);
-  //   } catch (error) {
-  //     console.error('Erro ao registrar o horário:', error);
-  //   }
-  // };
+  const startWork = () =>{
+    setStartWorkData(true)
+  }
 
-  // const handleClockInData = async () => {
-  //   const employeeId = 1;
-  //   try {
-  //     const response = await getStartData(employeeId);
-  //     const { data } = response;
-  //     setClockInData(data);
-  //     setStartWorkData(true);
-  //   } catch (error) {
-  //     console.error('Erro ao registrar o horário:', error);
-  //   }
-  // };
+  const finishWork = () =>{
+    setFinishWorkData(true)
+  }
+
+  const summary = () => {
+    setTotalHours(true)
+  }
+
+  console.log(finishWork)
 
   return(
     <>
       <Header/>
-      <StartWork />
-      {/* <Button onClick={handleClockIn}>MARCAR PONTO</Button> */}
+      <div className="mainContent">
+        <div className="buttonWrapper">
+          <Button onClick={startWork}>Início do expediente</Button>
+          <Button onClick={finishWork}>Fim do expediente</Button>
+          <Button onClick={summary}>Resumo</Button>
+        </div>
+        <div>
+          {startWorkData && ( <StartWork />)}
+          {finishWorkData && (<FinishWork />)}
+          {totalHours && (<TotalHours />)}
+        </div>
+      </div>
     </>
   )
 }
